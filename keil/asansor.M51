@@ -1,0 +1,225 @@
+BL51 BANKED LINKER/LOCATER V6.00                                                        05/21/2006  21:28:38  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.00, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE asansor.obj TO asansor RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  asansor.obj (ASANSOR)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  asansor (ASANSOR)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0008H     UNIT         _DATA_GROUP_
+            DATA    0010H     0006H     UNIT         ?DT?ASANSOR
+            IDATA   0016H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     008CH     UNIT         ?C_C51STARTUP
+            CODE    008FH     0064H     UNIT         ?PR?MAIN?ASANSOR
+            CODE    00F3H     0061H     UNIT         ?PR?_ASAGI?ASANSOR
+            CODE    0154H     0054H     UNIT         ?PR?_YUKARI?ASANSOR
+            CODE    01A8H     004CH     UNIT         ?PR?_KONTROL?ASANSOR
+            CODE    01F4H     0037H     UNIT         ?PR?_BEKLE?ASANSOR
+            CODE    022BH     0009H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   asansor (ASANSOR)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?ASANSOR
+  +--> ?C_INITSEG
+
+?PR?MAIN?ASANSOR               0008H    0002H
+  +--> ?PR?_KONTROL?ASANSOR
+
+?PR?_KONTROL?ASANSOR           000AH    0004H
+  +--> ?PR?_YUKARI?ASANSOR
+  +--> ?PR?_ASAGI?ASANSOR
+
+?PR?_YUKARI?ASANSOR            000EH    0002H
+  +--> ?PR?_BEKLE?ASANSOR
+
+?PR?_ASAGI?ASANSOR             000EH    0002H
+BL51 BANKED LINKER/LOCATER V6.00                                                      05/21/2006  21:28:38  PAGE 2
+
+
+  +--> ?PR?_BEKLE?ASANSOR
+
+
+
+SYMBOL TABLE OF MODULE:  asansor (ASANSOR)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ASANSOR
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:008FH         PUBLIC        main
+  D:0010H         PUBLIC        kat
+  D:0012H         PUBLIC        hiz
+  D:0014H         PUBLIC        tur
+  C:0200H         PUBLIC        _bekle
+  C:00F3H         PUBLIC        _asagi
+  C:01A8H         PUBLIC        _kontrol
+  C:0154H         PUBLIC        _yukari
+  -------         PROC          L?0038
+  -------         ENDPROC       L?0038
+  -------         PROC          _BEKLE
+  D:0006H         SYMBOL        c
+  -------         DO            
+  D:0006H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:0200H         LINE#         9
+  C:0200H         LINE#         10
+  C:0200H         LINE#         12
+  C:0204H         LINE#         13
+  C:0204H         LINE#         14
+  C:0206H         LINE#         15
+  C:0206H         LINE#         16
+  C:0218H         LINE#         17
+  C:0218H         LINE#         19
+  C:021FH         LINE#         20
+  C:022AH         LINE#         21
+  C:022AH         LINE#         23
+  -------         ENDPROC       _BEKLE
+  -------         PROC          _YUKARI
+  D:000EH         SYMBOL        b
+  -------         DO            
+  D:0002H         SYMBOL        i
+  D:0082H         SYMBOL        j
+  -------         ENDDO         
+  C:0154H         LINE#         27
+  C:0158H         LINE#         28
+  C:0158H         LINE#         30
+  C:016BH         LINE#         31
+  C:016BH         LINE#         33
+  C:016EH         LINE#         34
+  C:016EH         LINE#         35
+  C:0171H         LINE#         36
+BL51 BANKED LINKER/LOCATER V6.00                                                      05/21/2006  21:28:38  PAGE 3
+
+
+  C:0171H         LINE#         37
+  C:0171H         LINE#         38
+  C:0174H         LINE#         39
+  C:0177H         LINE#         40
+  C:017DH         LINE#         41
+  C:0180H         LINE#         42
+  C:0186H         LINE#         43
+  C:018FH         LINE#         44
+  C:0194H         LINE#         45
+  C:019BH         LINE#         46
+  C:01A7H         LINE#         48
+  -------         ENDPROC       _YUKARI
+  -------         PROC          _ASAGI
+  D:000EH         SYMBOL        b
+  -------         DO            
+  D:0002H         SYMBOL        i
+  D:0082H         SYMBOL        j
+  -------         ENDDO         
+  C:00F3H         LINE#         51
+  C:00F7H         LINE#         52
+  C:00F7H         LINE#         54
+  C:010AH         LINE#         55
+  C:010AH         LINE#         56
+  C:011EH         LINE#         57
+  C:011EH         LINE#         58
+  C:0121H         LINE#         59
+  C:0127H         LINE#         60
+  C:012AH         LINE#         61
+  C:012AH         LINE#         62
+  C:012AH         LINE#         63
+  C:012DH         LINE#         64
+  C:0130H         LINE#         65
+  C:0136H         LINE#         66
+  C:0139H         LINE#         67
+  C:013FH         LINE#         68
+  C:0146H         LINE#         69
+  C:0153H         LINE#         71
+  -------         ENDPROC       _ASAGI
+  -------         PROC          _KONTROL
+  D:000AH         SYMBOL        a
+  -------         DO            
+  D:000CH         SYMBOL        fark
+  -------         ENDDO         
+  C:01A8H         LINE#         75
+  C:01ACH         LINE#         76
+  C:01ACH         LINE#         78
+  C:01BDH         LINE#         79
+  C:01BDH         LINE#         80
+  C:01C9H         LINE#         81
+  C:01CFH         LINE#         82
+  C:01CFH         LINE#         84
+  C:01E0H         LINE#         85
+  C:01E0H         LINE#         86
+  C:01EDH         LINE#         87
+  C:01F3H         LINE#         88
+  C:01F3H         LINE#         90
+  -------         ENDPROC       _KONTROL
+BL51 BANKED LINKER/LOCATER V6.00                                                      05/21/2006  21:28:38  PAGE 4
+
+
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        kat1
+  -------         ENDDO         
+  C:008FH         LINE#         93
+  C:008FH         LINE#         94
+  C:008FH         LINE#         96
+  C:0094H         LINE#         97
+  C:0097H         LINE#         98
+  C:0097H         LINE#         99
+  C:0097H         LINE#         100
+  C:009CH         LINE#         101
+  C:009CH         LINE#         102
+  C:00A2H         LINE#         103
+  C:00A9H         LINE#         104
+  C:00A9H         LINE#         106
+  C:00AEH         LINE#         107
+  C:00AEH         LINE#         108
+  C:00B4H         LINE#         109
+  C:00BBH         LINE#         110
+  C:00BBH         LINE#         112
+  C:00C0H         LINE#         113
+  C:00C0H         LINE#         114
+  C:00C6H         LINE#         115
+  C:00CDH         LINE#         116
+  C:00CDH         LINE#         118
+  C:00D2H         LINE#         119
+  C:00D2H         LINE#         120
+  C:00D8H         LINE#         121
+  C:00DFH         LINE#         122
+  C:00DFH         LINE#         124
+  C:00E4H         LINE#         125
+  C:00E4H         LINE#         126
+  C:00EAH         LINE#         127
+  C:00F1H         LINE#         128
+  C:00F1H         LINE#         129
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        ASANSOR
+
+Program Size: data=23.0 xdata=0 code=564
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
